@@ -1,0 +1,18 @@
+request method :--
+
+request method:
+
+GET : -fetch url , optional config
+POST : -post-add  url,data,opt config
+DELETE :- url/where url,param,
+PUT    :update url id, data
+PATCH  :- getbyid
+
+
+HTTP STATUS
+
+200
+"record added..."
+"record added.."
+204
+

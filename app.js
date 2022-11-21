@@ -1,28 +1,24 @@
-//http module
-var http = require('http')
-//var user = require('./calc')
-var userdata = require('./filehandling/user')
-var  data = require('./calc')
-console.log(data.user)
-console.log(data.sum(100,2))
-
-//userdata.readDataFromFille()
-userdata.writeDataToFile()
-//userdata.appendDataToFile()
-//userdata.removeFile()
-//userdata.createFolder()
-//userdata.copyfile()
-//userdata.removeFolder()
-
-//create server
-var PORT = 3000
+const express = require('express')
+const app = express()
+app.use(express.json())
 
 
-
-
-const server  =http.createServer()
-server.listen(PORT,()=>{
+///create server using exress
+const PORT = 3000
+app.listen(PORT,()=>{
     console.log('Server is running on port',PORT)
 })
-//listen to port 3000
 
+
+
+
+app.get('/hello',(req,res)=>{
+  
+    res.send("Hello world")
+})
+
+app.post('/hello',(req,res)=>{
+
+    res.send("Hello world post")
+    console.log(req.body.name)
+})
