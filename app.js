@@ -2,11 +2,15 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const productRoutes = require("./routes/ProductRoutes");
+const departmentRoutes = require("./routes/DepartmentRoutes");
+const employeeRoutes = require("./routes/EmployeeRoutes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
 app.use('/product',productRoutes);
+app.use('/dept',departmentRoutes);
+app.use('/emp',employeeRoutes)
 var search = require("./search");
 
 
