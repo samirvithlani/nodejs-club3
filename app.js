@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const productRoutes = require("./routes/ProductRoutes");
 const departmentRoutes = require("./routes/DepartmentRoutes");
 const employeeRoutes = require("./routes/EmployeeRoutes");
+const cartRoutes = require("./routes/CartRoutes");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/product',productRoutes);
 app.use('/dept',departmentRoutes);
 app.use('/emp',employeeRoutes)
+app.use('/cart',cartRoutes)
 var search = require("./search");
 
 
