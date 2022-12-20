@@ -5,6 +5,8 @@ const productRoutes = require("./routes/ProductRoutes");
 const departmentRoutes = require("./routes/DepartmentRoutes");
 const employeeRoutes = require("./routes/EmployeeRoutes");
 const cartRoutes = require("./routes/CartRoutes");
+const uploadRoutes = require("./routes/UploadRoutes");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -13,6 +15,7 @@ app.use('/product',productRoutes);
 app.use('/dept',departmentRoutes);
 app.use('/emp',employeeRoutes)
 app.use('/cart',cartRoutes)
+app.use('/upload',uploadRoutes)
 var search = require("./search");
 
 
@@ -23,7 +26,7 @@ app.listen(PORT, () => {
 });
 
 
-mongoose.connect("mongodb://localhost:27017/club3",{
+mongoose.connect("mongodb://127.0.0.1:27017/club3",{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   },(err)=>{
