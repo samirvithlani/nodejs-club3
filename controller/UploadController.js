@@ -2,6 +2,10 @@ const path = require('path');
 const multer = require('multer');
 const UploadSchema = require('../model/UploadSchema');
 
+// ./
+// ../
+// ../../ 
+// ../../../
 //file storage.....
 const storage = multer.diskStorage({
     destination:'./uploads/',
@@ -14,6 +18,7 @@ const upload = multer({
     storage:storage,
     limits:{fileSize:9000000},
 }).single('profilePic');
+
 
 exports.uploadFile = (req,res)=>{
 

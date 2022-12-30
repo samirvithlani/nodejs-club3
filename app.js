@@ -6,6 +6,7 @@ const departmentRoutes = require("./routes/DepartmentRoutes");
 const employeeRoutes = require("./routes/EmployeeRoutes");
 const cartRoutes = require("./routes/CartRoutes");
 const uploadRoutes = require("./routes/UploadRoutes");
+const roleRoutes = require("./routes/RoleRoutes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +17,7 @@ app.use('/dept',departmentRoutes);
 app.use('/emp',employeeRoutes)
 app.use('/cart',cartRoutes)
 app.use('/upload',uploadRoutes)
-var search = require("./search");
+app.use('/role',roleRoutes)
 
 
 ///create server using exress
