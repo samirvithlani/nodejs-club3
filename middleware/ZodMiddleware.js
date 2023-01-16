@@ -10,7 +10,7 @@ const validate =(schema) =>async(req,res,next)=>{
             return next();
 
         }catch(err){
-            res.json({
+           return res.json({
                 status:400,
                 message:err
             })

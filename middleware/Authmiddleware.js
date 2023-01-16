@@ -1,4 +1,3 @@
-
 const RoleSchema = require('../model/RoleSchema');
 const auth = ()=> (req, res, next) => {
 
