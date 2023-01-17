@@ -14,8 +14,12 @@ const employeeSchema = Schema({
     department:{
         type:Schema.Types.ObjectId,
         ref:'Department'
+    },
+    password:{
+        type:String,
+        required:true
     }
 })
 //mongoose.model('Employee',employeeSchema);
 //module.exports = employeeSchema
-module.exports = mongoose.model('Employee12',employeeSchema);
+module.exports = mongoose.model('Employee123',employeeSchema);

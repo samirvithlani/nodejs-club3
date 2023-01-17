@@ -1,14 +1,30 @@
 const employeeSchema = require('../model/EmployeeSchema');
+const encrypt = require('../util/Encrypt');
 
-module.exports.addEmployee = (req,res)=>{
+module.exports.addEmployee = async(req,res)=>{
 
     //created object of model
-    const employee = new employeeSchema(req.body)
+
+    let hash = await encrypt.hashPassword(req.body.password)
+    
+    
+    
+
+    var empData = {
+        name:req.body.name,
+        email:req.body.email,
+        department:req.body.department,
+        password:hash
+    }
+
+    console.log("empData",empData)
+
+    const employee = new employeeSchema(empData)
     employee.save((err,data)=>{
         if(err){
 
             res.status(500).json({
-                message:"Error Occured",
+                message:err
             })
         }
         else{
