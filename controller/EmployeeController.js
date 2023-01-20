@@ -1,5 +1,6 @@
 const employeeSchema = require('../model/EmployeeSchema');
 const encrypt = require('../util/Encrypt');
+const mailer = require('../util/mailer');
 
 module.exports.addEmployee = async(req,res)=>{
 
@@ -22,12 +23,12 @@ module.exports.addEmployee = async(req,res)=>{
     const employee = new employeeSchema(empData)
     employee.save((err,data)=>{
         if(err){
-
             res.status(500).json({
                 message:err
             })
         }
         else{
+            mailer.sendMail(data.email)
             res.status(201).json({
                 message:"Employee Added Successfully",
                 data:data
