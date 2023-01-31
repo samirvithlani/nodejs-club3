@@ -11,7 +11,7 @@ const timeTableRoutes = require("./routes/TimeTableRoutes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+require("dotenv").config();
 
 app.use('/product',productRoutes);
 app.use('/dept',departmentRoutes);
@@ -23,7 +23,7 @@ app.use('/timeTable',timeTableRoutes)
 
 
 ///create server using exress
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("Server is running on port", PORT);
 });
