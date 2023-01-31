@@ -6,7 +6,7 @@ const zodMiddleware = require("../middleware/ZodMiddleware");
 const AuthMiddleware = require("../middleware/AuthMiddleware");
 
 router.post('/addproduct',zodMiddleware.validate(productValidation),productController.addProduct);
-router.get('/getproduct',AuthMiddleware.auth(),productController.getAllProducts)
+router.get('/getproduct',productController.getAllProducts)
 router.delete('/deleteproduct/:id',productController.deleteProduct)
 router.put('/updateproduct/:id',productController.updateProduct)
 router.get('/productbyid/:id',productController.getProductById)
