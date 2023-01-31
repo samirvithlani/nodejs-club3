@@ -3,7 +3,7 @@ var router = express.Router();
 const productController = require("../controller/ProductController");
 const productValidation = require("../util/ProductSchemaValidation");
 const zodMiddleware = require("../middleware/ZodMiddleware");
-const AuthMiddleware = require("../middleware/AuthMiddleware");
+//const AuthMiddleware = require("../middleware/AuthMiddleware");
 
 router.post('/addproduct',zodMiddleware.validate(productValidation),productController.addProduct);
 router.get('/getproduct',productController.getAllProducts)
